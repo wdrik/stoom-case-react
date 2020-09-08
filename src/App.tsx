@@ -1,8 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 
-function App() {
-  return <div className="App">kkkkk</div>;
-}
+import Home from './pages/Home';
+
+import GlobalStyle from './styles/global';
+
+const App: React.FC = () => {
+  return (
+    <>
+      <Home />
+
+      <GlobalStyle />
+    </>
+  );
+};
 
 export default App;
