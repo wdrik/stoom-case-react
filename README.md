@@ -13,7 +13,7 @@ You will also see any lint errors in the console.
 ### Api mock
 
 ```
-cd api; json-server -p 3001 db.json
+json-server -p 3001 api/db.json
 ```
 
 Runs the app in the mock api<br />

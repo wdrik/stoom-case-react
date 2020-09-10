@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FiArrowRight } from 'react-icons/fi';
 
 import api from '../../services/api';
 
@@ -30,10 +32,10 @@ const Home: React.FC = () => {
   return (
     <Container>
       <h1>Promoção do dia:</h1>
-      <p>
+      <span>
         Selecione uma pizza da promoção e ganhe R$ 10,00 em desconto para a
         proxima pizza!
-      </p>
+      </span>
 
       <RecomendationWrapper>
         {recommendations.map(recommendation => (
@@ -47,6 +49,11 @@ const Home: React.FC = () => {
           </div>
         ))}
       </RecomendationWrapper>
+
+      <Link to="/stepone">
+        Quero montar a minha pizza!
+        <FiArrowRight size={22} />
+      </Link>
     </Container>
   );
 };

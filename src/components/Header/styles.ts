@@ -23,4 +23,12 @@ export const Wrapper = styled.div`
   img {
     width: 48px;
   }
+
+  > div {
+    width: 78px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;

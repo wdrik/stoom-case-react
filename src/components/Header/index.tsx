@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FiSearch } from 'react-icons/fi';
+import { FiSearch, FiAlignJustify, FiShoppingCart } from 'react-icons/fi';
 
 import logoPizza from '../../assets/images/logo-pizza.png';
 
@@ -12,7 +12,11 @@ const Header: React.FC = () => {
       <Wrapper>
         <img src={logoPizza} alt="logo pizza" />
 
-        <FiSearch size={20} />
+        <div>
+          <FiSearch size={20} />
+          <FiAlignJustify size={20} />
+          <FiShoppingCart size={20} />
+        </div>
       </Wrapper>
     </Container>
   );
