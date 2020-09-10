@@ -1,4 +1,21 @@
 {
+  "recommendations": [
+    {
+      "id": 1,
+      "name": "4 Queijos",
+      "price": "R$ 40,00"
+    },
+    {
+      "id": 2,
+      "name": "Gorganzola",
+      "price": "R$ 42,00"
+    },
+    {
+      "id": 3,
+      "name": "Lombo",
+      "price": "R$ 38,00"
+    }
+  ],
   "mass": [
     {
       "id": 1,

@@ -8,15 +8,19 @@ export default createGlobalStyle`
     outline: 0;
   }
 
-  body {
-    background: #EBEBEB;
-    color: #333333;
-    -webkit-font-smoothing: antialiased;
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    background: var(--color-white);
   }
 
-  body, input, button {
-    font-family: 'Roboto Slab', serif;
-    font-size: 16px;
+  *, button, input {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
+  }
+
+  body {
+    color: var(--color-black);
+    -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6, strong {
@@ -25,5 +29,13 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  :root {
+    --color-black: rgba(0,0,0,.9);
+    --color-gray: rgba(0,0,0,.6);
+    --color-separator: rgba(0,0,0,0.15);
+    --color-white: #fff;
+    --color-primary: #ff0000;
   }
 `;
