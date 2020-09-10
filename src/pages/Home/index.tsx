@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
 
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
         ))}
       </RecomendationWrapper>
 
-      <Link to="/stepone">
+      <Link to="/step-one">
         Quero montar a minha pizza!
         <FiArrowRight size={22} />
       </Link>
