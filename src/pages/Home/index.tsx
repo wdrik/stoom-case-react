@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
+
+import { OrderContext } from '../../context/OrderContext';
 
 import api from '../../services/api';
 
@@ -19,6 +21,8 @@ const Home: React.FC = () => {
     [],
   );
 
+  const { points, addRecomendationItem } = useContext(OrderContext);
+
   useEffect(() => {
     const handleGetRecomendations = async () => {
       const { data } = await api.get('/recommendations');
@@ -29,13 +33,24 @@ const Home: React.FC = () => {
     handleGetRecomendations();
   }, []);
 
+  const handleAddRecomendationItem = useCallback(() => {
+    addRecomendationItem();
+  }, [addRecomendationItem]);
+
   return (
     <Container>
       <h1>Promoção do dia:</h1>
+
       <span>
         Selecione uma pizza da promoção e ganhe R$ 10,00 em desconto para a
         proxima pizza!
       </span>
+
+      {points !== 0 && (
+        <p>
+          <strong> Sucesso! Você ganhou R$ 10,00 em desconto!</strong>
+        </p>
+      )}
 
       <RecomendationWrapper>
         {recommendations.map(recommendation => (
@@ -45,7 +60,9 @@ const Home: React.FC = () => {
             <h3>{recommendation.name}</h3>
             <span>{recommendation.price}</span>
 
-            <button type="button">Adicionar</button>
+            <button type="button" onClick={handleAddRecomendationItem}>
+              Adicionar
+            </button>
           </div>
         ))}
       </RecomendationWrapper>

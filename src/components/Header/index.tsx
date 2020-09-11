@@ -14,8 +14,8 @@ const Header: React.FC = () => {
 
         <div>
           <FiSearch size={20} />
-          <FiAlignJustify size={20} />
           <FiShoppingCart size={20} />
+          <FiAlignJustify size={20} />
         </div>
       </Wrapper>
     </Container>

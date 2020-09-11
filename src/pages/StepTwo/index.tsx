@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
+
+import { OrderContext } from '../../context/OrderContext';
 
 import { Container } from './styles';
 
 const StepTwo: React.FC = () => {
-  const [size, setSize] = useState<string>('');
+  const { size, handleSetSize } = useContext(OrderContext);
 
-  function handleSetSize(e: React.ChangeEvent<HTMLInputElement>) {
-    setSize(e.target.value);
+  function setSize(e: React.ChangeEvent<HTMLInputElement>) {
+    handleSetSize(e.target.value);
   }
 
   return (
@@ -24,19 +26,19 @@ const StepTwo: React.FC = () => {
 
       {!size && <span>Temos 3 opções de tamanho</span>}
 
-      <div onChange={handleSetSize}>
-        <label htmlFor="broto">
-          <input type="radio" value="broto" name="broto" />
+      <div onChange={setSize}>
+        <label htmlFor="size">
+          <input type="radio" value="broto" name="size" />
           Broto
         </label>
 
-        <label htmlFor="media">
-          <input type="radio" value="media" name="media" />
+        <label htmlFor="size">
+          <input type="radio" value="media" name="size" />
           Média
         </label>
 
-        <label htmlFor="grande">
-          <input type="radio" value="grande" name="grande" />
+        <label htmlFor="size">
+          <input type="radio" value="grande" name="size" />
           Grande
         </label>
       </div>

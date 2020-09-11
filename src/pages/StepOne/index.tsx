@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
+
+import { OrderContext } from '../../context/OrderContext';
 
 import { Container } from './styles';
 
 const StepOne: React.FC = () => {
-  const [dough, setDough] = useState<string>('');
+  const { dough, handleSetDough } = useContext(OrderContext);
 
-  function handleSetDough(e: React.ChangeEvent<HTMLInputElement>) {
-    setDough(e.target.value);
+  function setDough(e: React.ChangeEvent<HTMLInputElement>) {
+    handleSetDough(e.target.value);
   }
 
   return (
@@ -24,19 +26,19 @@ const StepOne: React.FC = () => {
 
       {!dough && <span>Temos 3 opções de massa</span>}
 
-      <div onChange={handleSetDough}>
-        <label htmlFor="fina">
-          <input type="radio" value="fina" name="fina" />
+      <div onChange={setDough}>
+        <label htmlFor="dough">
+          <input type="radio" value="fina" name="dough" />
           Fina
         </label>
 
-        <label htmlFor="normal">
-          <input type="radio" value="normal" name="normal" />
+        <label htmlFor="dough">
+          <input type="radio" value="normal" name="dough" />
           Normal
         </label>
 
-        <label htmlFor="grossa">
-          <input type="radio" value="grossa" name="grossa" />
+        <label htmlFor="dough">
+          <input type="radio" value="grossa" name="dough" />
           Grossa
         </label>
       </div>

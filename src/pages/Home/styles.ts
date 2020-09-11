@@ -5,7 +5,8 @@ export const Container = styled.div`
   max-width: 1080px;
   margin: 0 auto;
 
-  span {
+  span,
+  p {
     opacity: 0.7;
   }
 

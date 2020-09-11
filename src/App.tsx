@@ -6,12 +6,16 @@ import GlobalStyle from './styles/global';
 
 import Routes from './routes';
 
+import { OrderProvider } from './context/OrderContext';
+
 const App: React.FC = () => {
   return (
     <>
       <Header />
 
-      <Routes />
+      <OrderProvider>
+        <Routes />
+      </OrderProvider>
 
       <GlobalStyle />
     </>
