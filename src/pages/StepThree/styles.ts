@@ -10,6 +10,10 @@ export const Container = styled.div`
     display: block;
     margin-bottom: 20px;
     opacity: 0.7;
+
+    > strong {
+      margin-left: 4px;
+    }
   }
 
   > select {
